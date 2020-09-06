@@ -25,7 +25,7 @@ class User:
         User.user_list.remove(self)
 
     @classmethod
-    def find_by_username(cls, username):
+    def find_by_username_user(cls, username):
         '''
         method that takes in a username and returns a credential pair that matches that username
         
@@ -39,7 +39,7 @@ class User:
                 return user
 
     @classmethod
-    def user_exists(cls, username):
+    def user_exists(cls, username, password):
         '''
         Method that checks if a user exists from the user list
         Args:
@@ -48,7 +48,7 @@ class User:
             Boolean: True or false depending if the user exists
         '''
         for User in cls.user_list:
-            if User.usernameU == username:
+            if User.usernameU == username and User.passwordU == password:
                 return True
         return False
 
@@ -58,6 +58,29 @@ class User:
         method that returns the users list
         '''
         return cls.user_list
+    
+    @classmethod
+    def verify_user(cls,username, password):
+        """
+        method to verify whether the user is in our user_list or not
+        """
+        a_user = ""
+        for user in User.user_list:
+            if(user.usernameU == username and user.passwordU == password):
+                    a_user == user.usernameU
+        return a_user
+
+
+    # @classmethod
+    # def verify_user(cls,username, password):
+    #     """
+    #     method to verify whether the user is in our user_list or not
+    #     """
+    #     a_user = ""
+    #     for user in User.user_list:
+    #         if(user.usernameU == username and user.passwordU == password):
+    #                 a_user == user.usernameU
+    #     return a_user
 
 
 
@@ -72,6 +95,7 @@ class Credentials:
 
     credentials_list = []
 
+    
 
     def __init__(self, username, password):
         self.username = username

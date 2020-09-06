@@ -21,17 +21,31 @@ def delete_users(user):
     '''
     user.delete_users()
 
-def user_exists(username):
+def user_exists(username, password):
     '''
     function that checks if a user exists from the user list
     '''
-    return User.user_exists(username)
+    return User.user_exists(username, password)
+
+def find_by_username_user(username):
+    '''
+    Function that finds a user by username 
+    '''
+    return User.find_by_username_user(username)
 
 def display_users():
     '''
     Function that returns all the saved users
     '''
     return User.display_users()
+
+def login_user(username,password):
+    """
+    function that checks whether a user exists and then logs in the user.
+    """
+  
+    check_user = User.verify_user(username,password)
+    return check_user
 
 
 
@@ -60,7 +74,7 @@ def delete_credentials(credentials):
 
 def find_by_username(username):
     '''
-    Function that finds a credential by username and retruns the credential pair
+    Function that finds a credential by username and returns the credential pair
     '''
     return Credentials.find_by_username(username)
 
@@ -78,76 +92,48 @@ def display_credentials():
 
 def main():
     print("Hello Welcome to password locker.") 
-    print("Is this your first time? (Respond with y/n)") 
+    print("Let's get you started by creating your new account")
+    print("-"*10)
+
+    print("Please input a Password_Locker UserName of your choice...")
+    u_name_login = input()
+
+    print("Please input the Password_Locker Password you'll be using...")
+    password_login = input()
+
+    save_users(create_users(u_name_login,password_login)) 
+    print ('\n')
+    print(f"New User username: {u_name_login} password: {password_login} saved!")
+
+    print("Here is a list of all the users")
+    print('\n')
+
+    for user in display_users():
+        print(f"{user.usernameU}, ThomasReaddead, IanMoletown, AngelicahDafoe.....")
+        print ('\n')
+
+        break
+
+
+
+
+    print("Great! Now let's login to Password_Locker")
+    print("-"*10)
+    print("Enter your User name and your Password to log in:")
+    username = input("Username: ")
+    password = input("Password: ")
     
 
-    while True:
-        first_time = input().lower()
+    login = user_exists(username,password)
+    print(login)
 
-        if first_time == 'y':
-            print("Great! Let's get you started by creating your new account")
-            print("-"*10)
+    if login == True :
+        print(f"Hello {username}. Welcome To Password_Locker")  
+        print('\n')
+    else:
+        print("umeburnt")
 
-            print("Please input a Password_Locker UserName of your choice...")
-            u_name_login = input()
-
-            print("Please input the Password_Locker Password you'll be using...")
-            password_login = input()
-
-            save_users(create_users(u_name_login,password_login)) 
-            print ('\n')
-            print(f"New User username: {u_name_login} password: {password_login} saved!")
-
-            print("Here is a list of all the users")
-            print('\n')
-
-            for user in display_users():
-                print(f"{user.usernameU} {user.passwordU} .....")
-                print ('\n')
-
-            break
-
-
-
-
-        elif first_time == 'n':
-            print("Login to Password_Locker")
-            print("-"*10)
-
-            print("Please input your Password_Locker UserName...")
-
-            search_username_login = input()
-            if user_exists(search_username_login):
-                search_user = find_by_username(search_username_login)
-                print(f"{search_user.username} {search_user.password}")
-                print('-' * 20)
-
-            else:
-                print("That credential does not exist")
-            
-
-            print("Please input yout Password_Locker Password...")
-            password_login = input()
-
-
-            
-            break
-
-        else:
-            print("I really didn't get that. Please try again")
-
-
-
-
-
-
-
-        
-
-        
-
-    # print(f"Hello {u_name_login}. what would you like to do?")
-    # print('\n')
+    
 
     while True:
             print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential by username, ex -exit the credential list ")
