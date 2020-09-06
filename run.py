@@ -39,7 +39,7 @@ def display_credentials():
     return Credentials.display_credentials()
 
 def main():
-    print("Hello Welcome to pssword locker. What is your name?")
+    print("Hello Welcome to password locker. What is your name?")
     user_name = input()
 
     print(f"Hello {user_name}. what would you like to do?")
