@@ -1,6 +1,9 @@
 #!/usr/bin/env python3.8
-from password import User
-from password import Credentials
+from password import User, Credentials
+import pyfiglet
+
+ascii_banner = pyfiglet.figlet_format("Pass_Lock!")
+print(ascii_banner)
 
 def create_users(username, password):
     '''
@@ -91,7 +94,7 @@ def display_credentials():
     return Credentials.display_credentials()
 
 def main():
-    print("Hello Welcome to password locker.") 
+    print("Hello Welcome to Password_Locker.") 
     print("Let's get you started by creating your new account")
     print("-"*10)
 
@@ -183,10 +186,14 @@ def main():
                             print("That credential does not exist")
 
             elif short_code == "ex":
-                    print("Bye .......")
-                    break
+                ascii_banner = pyfiglet.figlet_format("Bye Bye!")
+                print(ascii_banner)
+                #print("Bye .......")
+                break
             else:
                     print("I really didn't get that. Please use the short codes")
+
+
 
 if __name__ == '__main__':
 
