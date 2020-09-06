@@ -8,8 +8,21 @@ class User:
 
 
     def __init__(self, usernameU, passwordU):
-        self.username = usernameU
-        self.password = passwordU
+        self.usernameU = usernameU
+        self.passwordU = passwordU
+
+    def save_user(self):
+        '''
+        save_user method saves user objects into user_list
+        '''
+
+        User.user_list.append(self)
+
+    def delete_credentials(self):
+        '''
+        delete_credentials method to delete  saved credential objects from credentials_list
+        '''
+        Credentials.credentials_list.remove(self)
 
 
 
