@@ -64,6 +64,17 @@ class TestUser(unittest.TestCase):
         user_exists = User.user_exists("Mandem")
         self.assertTrue(user_exists)
 
+    def test_find_users_by_username(self):
+        '''
+        test to check if we can find the needed username and password combination whiile searching by username
+        '''
+        self.new_user.save_users()
+        test_user = User("Mandem", "uleule")
+        test_user.save_users()
+        found_user = User.find_by_username("Mandem")
+
+        self.assertEqual(found_user.usernameU,test_user.usernameU)
+
     def test_display_all_users(self):
         '''
         method that returns a list of all users saved
