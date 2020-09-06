@@ -41,11 +41,11 @@ class User:
     @classmethod
     def user_exists(cls, username):
         '''
-        Method that checks if a credential exists from the credentials_list
+        Method that checks if a user exists from the user list
         Args:
             number: username to search if it exists
         Returns :
-            Boolean: True or false depending if the credential exists
+            Boolean: True or false depending if the user exists
         '''
         for User in cls.user_list:
             if User.usernameU == username:
