@@ -24,6 +24,35 @@ class User:
         '''
         User.user_list.remove(self)
 
+    # @classmethod
+    # def find_by_username(cls, username):
+    #     '''
+    #     method that takes in a username and returns a credential pair that matches that username
+        
+    #     Args:
+    #         username
+    #     Returns:
+    #         password
+    #     '''
+    #     for credentials in cls.credentials_list:
+    #         if credentials.username == username:
+    #             return credentials
+
+    @classmethod
+    def user_exists(cls, username):
+        '''
+        Method that checks if a credential exists from the credentials_list
+        Args:
+            number: username to search if it exists
+        Returns :
+            Boolean: True or false depending if the credential exists
+        '''
+        for User in cls.user_list:
+            if User.usernameU == username:
+                return True
+        return False
+
+
 
 
 

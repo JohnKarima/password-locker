@@ -53,9 +53,22 @@ class TestUser(unittest.TestCase):
         self.new_user.delete_users()
         self.assertEqual(len(User.user_list),1)
 
+    def test_user_exists(self):
+        '''
+        test to check if we can return a Boolean if we cannot find the user
+        '''
+        self.new_user.save_users()
+        test_user = User("Mandem", "uleule")
+        test_user.save_users()
 
+        user_exists = User.user_exists("Mandem")
+        self.assertTrue(user_exists)
 
-
+    def test_display_all_users(self):
+        '''
+        method that returns a list of all users saved
+        '''
+        self.assertEqual(User.display_users(),User.user_list)
 
 
 class TestPassword(unittest.TestCase):
