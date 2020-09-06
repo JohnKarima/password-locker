@@ -57,10 +57,17 @@ class Credentials:
         Returns :
             Boolean: True or false depending if the credential exists
         '''
-        for credentials in cls.credentials_list:
-            if credentials.username == username:
+        for Credentials in cls.credentials_list:
+            if Credentials.username == username:
                 return True
         return False
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credentials_list
 
 
 
