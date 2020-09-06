@@ -345,3 +345,16 @@ if __name__ == '__main__':
 
 
     
+# def login_user(username,password):
+#     """
+#     function that checks whether a user exists and then logs in the user.
+#     """
+  
+#     check_user = User.verify_user(username,password)
+#     return check_user
+
+
+
+
+
+

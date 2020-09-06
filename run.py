@@ -42,20 +42,6 @@ def display_users():
     '''
     return User.display_users()
 
-# def login_user(username,password):
-#     """
-#     function that checks whether a user exists and then logs in the user.
-#     """
-  
-#     check_user = User.verify_user(username,password)
-#     return check_user
-
-
-
-
-
-
-
 def create_credentials(site, username, password):
     '''
     function to create  a new credential
@@ -93,6 +79,7 @@ def display_credentials():
     '''
     return Credentials.display_credentials()
 
+
 def main():
     print("Hello Welcome to Password_Locker.") 
     print("Let's get you started by creating your new account")
@@ -123,7 +110,6 @@ def main():
     username = input("Username: ")
     password = input("Password: ")
     
-
     login = user_exists(username,password)
 
     if login == True :
@@ -132,66 +118,89 @@ def main():
     elif login == False :
         print("Please try again")
 
-    
 
     while True:
-            print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential by username, ex -exit the credential list ")
+            print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential by username, d -delete a credential by site, ex -exit the credential list ")
 
             short_code = input().lower()
 
             if short_code == 'cc':
-                    print("New Credential")
-                    print("-"*10)
+                print("New Credential")
+                print("-"*10)
 
-                    print ("Site name ....")
-                    s_name = input()
+                print ("Site name ....")
+                s_name = input()
 
-                    print ("User name ....")
-                    u_name = input()
+                print ("User name ....")
+                u_name = input()
 
-                    print("Password ...")
-                    password = input()
+                print("Password ...")
+                password = input()
 
-                    save_credentials(create_credentials(s_name, u_name,password)) 
-                    print ('\n')
-                    print(f"New Credential for {s_name} account:\n Username: {u_name}\n Password: {password}")
-                    print ('\n')
+                save_credentials(create_credentials(s_name, u_name,password)) 
+                print ('\n')
+                print(f"New Credential for {s_name} account:\n Username: {u_name}\n Password: {password}")
+                print ('\n')
 
             elif short_code == 'dc':
 
-                    if display_credentials():
-                            print("Here is a list of all your credentials:")
-                            print('\n')
+                if display_credentials():
 
-                            for credentials in display_credentials():
-                                    print(f" Site: {credentials.site} Username: {credentials.username} Password: {credentials.password} .....")
+                    print("Here is a list of all your credentials:")
+                    print('\n')
 
-                            print('\n')
-                    else:
-                            print('\n')
-                            print("You dont seem to have any credentials saved yet")
-                            print('\n')
+                    for credentials in display_credentials():
+
+                        print(f" Site: {credentials.site} Username: {credentials.username} Password: {credentials.password} .....")
+
+                    print('\n')
+                else:
+                    print('\n')
+                    print("You don't seem to have any credentials saved yet")
+                    print('\n')
 
             elif short_code == 'fc':
 
-                    print("Enter the site name you want to search for")
+                print("Enter the site name you want to search for")
 
-                    search_site = input()
-                    if credential_exists(search_site):
-                            search_credentials = find_by_site(search_site)
-                            print(f"Found. Site: {search_credentials.site} Username: {search_credentials.username} Password: {search_credentials.password}")
-                            print('-' * 20)
+                search_site = input()
+                if credential_exists(search_site):
+                    search_credentials = find_by_site(search_site)
+                    print(f"Found. Site: {search_credentials.site} Username: {search_credentials.username} Password: {search_credentials.password}")
+                    print('-' * 20)
 
-                    else:
-                            print("That credential does not exist")
+                else:
+                    print("That credential does not exist")
+
+            
+            elif short_code == "d":
+                print("Enter the account name of the credentials you want to delete")
+                search_name = input().lower()
+                if find_by_site(search_name):
+                    search_credential = find_by_site(search_name)
+                    print("_"*50)
+                    search_credential.delete_credentials()
+                    print('\n')
+                    print(f"Your stored credentials for : {search_credential.site} successfully deleted!!!")
+                    print('\n')
+
+                else:
+                    print("That Credential you want to delete does not exist in your store yet")
+
+            
+
+
 
             elif short_code == "ex":
                 ascii_banner = pyfiglet.figlet_format("Bye Bye!")
                 print(ascii_banner)
-                #print("Bye .......")
+                print("See you again .......")
                 break
+
+
+
             else:
-                    print("I really didn't get that. Please use the short codes")
+                print("I really didn't get that. Please use the short codes")
 
 
 
