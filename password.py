@@ -97,7 +97,8 @@ class Credentials:
 
     
 
-    def __init__(self, username, password):
+    def __init__(self, site, username, password):
+        self.site = site
         self.username = username
         self.password = password
 
@@ -115,9 +116,9 @@ class Credentials:
         Credentials.credentials_list.remove(self)
 
     @classmethod
-    def find_by_username(cls, username):
+    def find_by_site(cls, site):
         '''
-        method that takes in a username and returns a credential pair that matches that username
+        method that takes in a site name and returns a credential pair that matches that site name
         
         Args:
             username
@@ -125,20 +126,20 @@ class Credentials:
             password
         '''
         for credentials in cls.credentials_list:
-            if credentials.username == username:
+            if credentials.site == site:
                 return credentials
 
     @classmethod
-    def credential_exists(cls, username):
+    def credential_exists(cls, site):
         '''
         Method that checks if a credential exists from the credentials_list
         Args:
-            number: username to search if it exists
+            number: site to search if it exists
         Returns :
             Boolean: True or false depending if the credential exists
         '''
         for Credentials in cls.credentials_list:
-            if Credentials.username == username:
+            if Credentials.site == site:
                 return True
         return False
 
