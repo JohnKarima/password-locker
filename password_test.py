@@ -45,7 +45,7 @@ class TestUser(unittest.TestCase):
 
     def test_delete_users(self):
         '''
-        test_delete_credentials to test if we can remove a credential from our credentials list
+        test_delete_users to test if we can remove a user from our user list
         '''
         self.new_user.save_users()
         test_user = User("Mandem", "uleule")
