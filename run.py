@@ -60,7 +60,9 @@ def display_credentials():
     return Credentials.display_credentials()
 
 def main():
-    print("Hello Welcome to password locker." '\n' "Is this your first time? (Respond with y/n)")
+    print("Hello Welcome to password locker.") 
+    print ('\n')
+    print("Is this your first time? (Respond with y/n)") 
     
 
     while True:
@@ -75,6 +77,12 @@ def main():
 
             print("Please input the Password_Locker Password you'll be using...")
             password_login = input()
+
+            save_users(create_users(u_name_login,password_login)) 
+            print ('\n')
+            print(f"New User username: {u_name_login} password: {password_login} saved!")
+            print ('\n')
+
             break
 
         elif first_time == 'n':
@@ -86,6 +94,9 @@ def main():
 
             print("Please input yout Password_Locker Password...")
             password_login = input()
+
+
+            
             break
 
         else:
@@ -119,11 +130,6 @@ def main():
                     print("Password ...")
                     password = input()
 
-                    # print("Phone number ...")
-                    # p_number = input()
-
-                    # print("Email address ...")
-                    # e_address = input()
 
 
                     save_credentials(create_credentials(u_name,password)) # create and save new credentials.
