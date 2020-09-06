@@ -2,6 +2,36 @@ import unittest
 from password import User
 from password import Credentials
 
+
+class TestUser(unittest.TestCase):
+    '''
+    Test class that defines the test cases for the User class behaviours
+    '''
+
+    def setUp(self):
+        '''
+        Set up method to run before each test cases
+        '''
+        self.new_user = User("montecarlos1", "2beornot2be")
+
+    def test_init(self):
+        '''
+        test_init case to see in the object is initialized properly
+        '''
+        self.assertEqual(self.new_user.username,"montecarlos1")
+        self.assertEqual(self.new_user.password,"2beornot2be")
+
+    def tearDown(self):
+        '''
+        tearDown method that cleans up after each test case has run
+        '''
+        User.user_list = []
+
+
+
+
+
+
 class TestPassword(unittest.TestCase):
     '''
     Test class that defines the test cases for the Credentials class behaviours
