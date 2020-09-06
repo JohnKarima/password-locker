@@ -75,6 +75,7 @@ def main():
 
             print("Please input the Password_Locker Password you'll be using...")
             password_login = input()
+            break
 
         elif first_time == 'n':
             print("Login to Password_Locker")
@@ -85,6 +86,13 @@ def main():
 
             print("Please input yout Password_Locker Password...")
             password_login = input()
+            break
+
+        else:
+            print("I really didn't get that. Please try again")
+
+
+
 
 
 
@@ -92,9 +100,8 @@ def main():
         
 
         
-            # print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential by username, ex -exit the credential list ")
 
-    print(f"Hello {user_name}. what would you like to do?")
+    print(f"Hello {u_name_login}. what would you like to do?")
     print('\n')
 
     while True:
