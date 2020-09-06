@@ -11,18 +11,18 @@ class User:
         self.usernameU = usernameU
         self.passwordU = passwordU
 
-    def save_user(self):
+    def save_users(self):
         '''
         save_user method saves user objects into user_list
         '''
 
         User.user_list.append(self)
 
-    def delete_credentials(self):
+    def delete_users(self):
         '''
-        delete_credentials method to delete  saved credential objects from credentials_list
+        delete_users method to delete  saved user objects from user_list
         '''
-        Credentials.credentials_list.remove(self)
+        User.user_list.remove(self)
 
 
 
