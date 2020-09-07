@@ -141,7 +141,7 @@ class TestPassword(unittest.TestCase):
         test_credentials.save_credentials()
         found_credentials = Credentials.find_by_site("finsta")
 
-        self.assertEqual(found_credentials.username,test_credentials.username)
+        self.assertEqual(found_credentials.site,test_credentials.site)
 
     def test_credentials_exists(self):
         '''
