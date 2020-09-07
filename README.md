@@ -4,6 +4,9 @@ Password Locker
 # Project Description 
 - An application that will help us manage our vafious different account login credentials and passwords.
 
+# Screenshot
+![Screenshop of working application](/images/screencap.png "Terminal Screenshot 1")
+
 # Author 
 - [John Karima](https://github.com/JohnKarima)
 
@@ -41,9 +44,6 @@ $ ./run.py
 ```
 $ python3.8 -m unittest password_test.py
 ```
-
-# Link to Live Project
-- tbd
 
 # Technologies Used
 - Python
