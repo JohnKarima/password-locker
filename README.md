@@ -37,7 +37,7 @@ $ code .
 ```
 - Run the application by opening the cloned file in terminal and running the commands:
 ```
-$ chmod+x run.py
+$ chmod +x run.py
 $ ./run.py
 ```
 - Run the test for the application:
