@@ -4,8 +4,8 @@ Password Locker
 # Project Description 
 - An application that will help us manage our various different account login credentials and passwords.
 
-# Screenshot
-![Screenshop of working application](/images/screencap.png "Terminal Screenshot 1")
+# Screencap
+![Screenshot of working application](/images/screencap.png "Terminal Screenshot 1")
 
 # Author 
 - [John Karima](https://github.com/JohnKarima)

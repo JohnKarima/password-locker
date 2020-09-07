@@ -71,23 +71,6 @@ class User:
         return a_user
 
 
-    # @classmethod
-    # def verify_user(cls,username, password):
-    #     """
-    #     method to verify whether the user is in our user_list or not
-    #     """
-    #     a_user = ""
-    #     for user in User.user_list:
-    #         if(user.usernameU == username and user.passwordU == password):
-    #                 a_user == user.usernameU
-    #     return a_user
-
-
-
-
-
-
-
 class Credentials:
     """
     Class that generates new instances of credentials
@@ -149,9 +132,3 @@ class Credentials:
         method that returns the credentials list
         '''
         return cls.credentials_list
-
-
-
-
-
-

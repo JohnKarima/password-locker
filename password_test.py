@@ -61,7 +61,7 @@ class TestUser(unittest.TestCase):
         test_user = User("Mandem", "uleule")
         test_user.save_users()
 
-        user_exists = User.user_exists("Mandem")
+        user_exists = User.user_exists("Mandem", "uleule")
         self.assertTrue(user_exists)
 
     def test_find_users_by_username(self):
@@ -71,7 +71,7 @@ class TestUser(unittest.TestCase):
         self.new_user.save_users()
         test_user = User("Mandem", "uleule")
         test_user.save_users()
-        found_user = User.find_by_username("Mandem")
+        found_user = User.find_by_username_user("Mandem")
 
         self.assertEqual(found_user.usernameU,test_user.usernameU)
 
@@ -91,12 +91,13 @@ class TestPassword(unittest.TestCase):
         '''
         Set up method to run before each test cases
         '''
-        self.new_credentials = Credentials("montecarlos", "2bornot2b")
+        self.new_credentials = Credentials("twitter", "montecarlos", "2bornot2b")
 
     def test_init(self):
         '''
         test_init case to see in the object is initialized properly
         '''
+        self.assertEqual(self.new_credentials.site,"twitter")
         self.assertEqual(self.new_credentials.username,"montecarlos")
         self.assertEqual(self.new_credentials.password,"2bornot2b")
 
@@ -118,7 +119,7 @@ class TestPassword(unittest.TestCase):
         test_save_multiple_credentials to check if we can save multiple credentials objects into the credentials_list
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("boba", "tea")
+        test_credentials = Credentials("finsta", "boba", "tea")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -127,19 +128,19 @@ class TestPassword(unittest.TestCase):
         test_delete_credentials to test if we can remove a credential from our credentials list
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("boba", "tea")
+        test_credentials = Credentials("finsta", "boba", "tea")
         test_credentials.save_credentials()
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
 
-    def test_find_credentials_by_username(self):
+    def test_find_credentials_by_site(self):
         '''
         test to check if we can find the relevant username and password combination whiile searching by username
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("boba", "tea")
+        test_credentials = Credentials("finsta", "boba", "tea")
         test_credentials.save_credentials()
-        found_credentials = Credentials.find_by_username("boba")
+        found_credentials = Credentials.find_by_site("finsta")
 
         self.assertEqual(found_credentials.username,test_credentials.username)
 
@@ -148,10 +149,10 @@ class TestPassword(unittest.TestCase):
         test to check if we can return a Boolean if we cannot find the credentials
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("boba", "tea")
+        test_credentials = Credentials("finsta", "boba", "tea")
         test_credentials.save_credentials()
 
-        credential_exists = Credentials.credential_exists("boba")
+        credential_exists = Credentials.credential_exists("finsta")
         self.assertTrue(credential_exists)
 
     def test_display_all_credentials(self):
