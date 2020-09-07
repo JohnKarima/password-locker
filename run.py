@@ -63,7 +63,7 @@ def delete_credentials(credentials):
 
 def find_by_site(site):
     '''
-    Function that finds a credential by username and returns the credential pair
+    Function that finds a credential by site and returns the credentials
     '''
     return Credentials.find_by_site(site)
 
