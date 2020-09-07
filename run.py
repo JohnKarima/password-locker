@@ -119,8 +119,7 @@ def main():
 
         while True:
 
-
-            print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential by username, d -delete a credential by site, ex -exit the credential list ")
+            print("Use these short codes : \nCC -create a new credential, DC -display credentials, \nFC -find a credential by username, D -delete a credential by site, \nEX -exit the credential list ")
 
             short_code = input().lower()
 
@@ -197,6 +196,7 @@ def main():
                 print("I really didn't get that. Please use the short codes")
 
     elif login == False :
+        print("Wrong Passlock login Credentials")
         print("Please try again")
 
 

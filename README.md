@@ -15,6 +15,7 @@ Password Locker
 - pyfiglet
 
 ## Cloning
+
 - Open Terminal
 ```
 {Ctrl+Alt+T}
@@ -30,6 +31,15 @@ $ cd password-locker
 - Open project on code editor 
 ```
 $ code . 
+```
+- Run the application by opening the cloned file in terminal and running the commands:
+```
+$ chmod+x run.py
+$ ./run.py
+```
+- Run the test for the application:
+```
+$ python3.8 -m unittest password_test.py
 ```
 
 # Link to Live Project

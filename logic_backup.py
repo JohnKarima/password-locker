@@ -358,3 +358,47 @@ if __name__ == '__main__':
 
 
 
+
+
+
+
+
+
+
+    # print("Let's get you started by creating your new account")
+    # print("-"*50)
+
+    # print("Please input a Password_Locker UserName of your choice...")
+    # u_name_login = input()
+
+    # print("Please input the Password_Locker Password you'll be using...")
+    # password_login = input()
+
+    # save_users(create_users(u_name_login,password_login)) 
+    # print ('\n')
+    # print(f"New User username: {u_name_login} password: {password_login} saved!")
+
+    # print("Here is a list of all the users")
+    # print('\n')
+
+    # for user in display_users():
+    #     print(f"{user.usernameU}, ThomasReaddead, IanMoletown, AngelicahDafoe.....")
+    #     print ('\n')
+
+    #     break
+
+    # print("Great! Now let's login to Password_Locker")
+    # print("-"*50)
+    # print("Enter your User name and your Password to log in:")
+    # username = input("Username: ")
+    # password = input("Password: ")
+    
+    # login = user_exists(username,password)
+
+    
+
+
+
+if __name__ == '__main__':
+
+    main()
