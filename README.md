@@ -5,7 +5,7 @@ Password Locker
 - An application that will help us manage our various different account login credentials and passwords.
 
 # Screencap
-![Screenshot of working application](/images/screencap.png "Terminal Screenshot 1")
+![Screenshot of working application](/images/screencap_ultra.png "Terminal Screenshot 1")
 
 # Author 
 - [John Karima](https://github.com/JohnKarima)
