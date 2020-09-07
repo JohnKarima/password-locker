@@ -5,8 +5,6 @@ class User:
 
     user_list = []
 
-
-
     def __init__(self, usernameU, passwordU):
         self.usernameU = usernameU
         self.passwordU = passwordU
@@ -15,12 +13,11 @@ class User:
         '''
         save_user method saves user objects into user_list
         '''
-
         User.user_list.append(self)
 
     def delete_users(self):
         '''
-        delete_users method to delete  saved user objects from user_list
+        delete_users method to delete saved user objects from user_list
         '''
         User.user_list.remove(self)
 
@@ -75,10 +72,7 @@ class Credentials:
     """
     Class that generates new instances of credentials
     """
-
     credentials_list = []
-
-    
 
     def __init__(self, site, username, password):
         self.site = site
@@ -89,7 +83,6 @@ class Credentials:
         '''
         save_credentials method saves credential objects into credentials_list
         '''
-
         Credentials.credentials_list.append(self)
 
     def delete_credentials(self):
@@ -102,11 +95,6 @@ class Credentials:
     def find_by_site(cls, site):
         '''
         method that takes in a site name and returns a credential pair that matches that site name
-        
-        Args:
-            username
-        Returns:
-            password
         '''
         for credentials in cls.credentials_list:
             if credentials.site == site:
@@ -117,9 +105,9 @@ class Credentials:
         '''
         Method that checks if a credential exists from the credentials_list
         Args:
-            number: site to search if it exists
+            site to search if it exists
         Returns :
-            Boolean: True or false depending if the credential exists
+            Boolean: True or false depending if the site exists
         '''
         for Credentials in cls.credentials_list:
             if Credentials.site == site:

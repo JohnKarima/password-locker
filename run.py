@@ -199,9 +199,6 @@ def main():
         print("Wrong Passlock login Credentials")
         print("Please input './run.py' and try again")
 
-
-
-
 if __name__ == '__main__':
 
     main()

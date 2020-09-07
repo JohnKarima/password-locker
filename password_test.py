@@ -2,7 +2,6 @@ import unittest
 from password import User
 from password import Credentials
 
-
 class TestUser(unittest.TestCase):
     '''
     Test class that defines the test cases for the User class behaviours
@@ -161,7 +160,5 @@ class TestPassword(unittest.TestCase):
         '''
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
         
-
-
 if __name__ == "__main__":
     unittest.main
