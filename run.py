@@ -114,18 +114,18 @@ def main():
 
     if login == True :
         print('\n')
-        print(f"Hello {username}. Welcome To Password_Locker")  
+        print(f"Hello {username}. Welcome To Password_Locker!")  
         print('\n')
 
         while True:
 
-            print("Use these short codes : \nCC -create a new credential, DC -display credentials, \nFC -find a credential by username, D -delete a credential by site, \nEX -exit the credential list ")
+            print("Use these short codes : \nCC -Create a new credential, DC -Display credentials, \nFC -Find a credential by site, D -Delete a credential by site, \nEX -Exit Password_Locker")
 
             short_code = input().lower()
 
             if short_code == 'cc':
                 print("New Credential")
-                print("-"*50)
+                print("*"*50)
 
                 print ("Site name ....")
                 s_name = input()
@@ -138,8 +138,8 @@ def main():
 
                 save_credentials(create_credentials(s_name, u_name,password)) 
                 print ('\n')
-                print(f"New Credential for {s_name} account:\n Username: {u_name}\n Password: {password}")
-                print ('\n')
+                print(f"New Credential for {s_name} account:\n Username: {u_name}\n Password: {password} created")
+                print("-"*50)
 
             elif short_code == 'dc':
 
@@ -171,16 +171,17 @@ def main():
 
                 else:
                     print("That credential does not exist")
+                    print("-"*50)
 
             elif short_code == "d":
-                print("Enter the account name of the credentials you want to delete")
+                print("Enter the account site name of the credentials you want to delete")
                 search_name = input().lower()
                 if find_by_site(search_name):
                     search_credential = find_by_site(search_name)
                     print("_"*50)
                     search_credential.delete_credentials()
                     print('\n')
-                    print(f"Your stored credentials for : {search_credential.site} successfully deleted!!!")
+                    print(f"Your stored credentials for : {search_credential.site} have successfully been deleted!!!")
                     print('\n')
 
                 else:
