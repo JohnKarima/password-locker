@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.8
 from password import User, Credentials
-import pyfiglet
+import pyfiglet, pyperclip
 
 ascii_banner = pyfiglet.figlet_format("Pass_Lock!")
 print(ascii_banner)
