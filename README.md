@@ -2,7 +2,7 @@
 Password Locker
 
 # Project Description 
-- An application that will help us manage our vafious different account login credentials and passwords.
+- An application that will help us manage our various different account login credentials and passwords.
 
 # Screenshot
 ![Screenshop of working application](/images/screencap.png "Terminal Screenshot 1")
@@ -10,7 +10,7 @@ Password Locker
 # Author 
 - [John Karima](https://github.com/JohnKarima)
 
-## Setup Instructions 
+# Setup Instructions 
 ## Prerequisites
 - python3.8
 - pip

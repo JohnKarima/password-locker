@@ -197,7 +197,7 @@ def main():
 
     elif login == False :
         print("Wrong Passlock login Credentials")
-        print("Please try again")
+        print("Please input './run.py' and try again")
 
 
 
